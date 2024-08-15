@@ -24,6 +24,7 @@ class CalendarController extends Controller
                 'monthName' => 'kipisi lawa',
                 'yearName' => $this->getYearName($date),
                 'cyclePartName' => $this->getCyclePartName($date),
+                'weekName' => 'nanpa wan',
             ];
         }
 
@@ -52,9 +53,21 @@ class CalendarController extends Controller
         $dayIndex = $daysInMonth % 15;
 
         $days = [
-            "suno kasi", "suno pan", "suno kule", "suno toki", "suno moli", 
-            "suno lete", "suno walo", "suno nimi", "suno seli", "suno moku",
-            "suno kulupu", "suno musi", "suno mama", "suno nasin", "suno penpo"
+            "suno kasi",
+            "suno pan",
+            "suno kule",
+            "suno toki",
+            "suno moli",
+            "suno lete",
+            "suno walo",
+            "suno nimi",
+            "suno seli",
+            "suno moku",
+            "suno kulupu",
+            "suno musi",
+            "suno mama",
+            "suno nasin",
+            "suno penpo"
         ];
 
         // Adjust for skipped suno moli every 4th week
@@ -64,8 +77,12 @@ class CalendarController extends Controller
 
         $dayName = $days[$dayIndex];
 
+        $weekNames = ["nanpa wan", "nanpa tu", "nanpa tu wan", "nanpa tu tu", "nanpa luka"];
+        $weekName = $weekNames[$weeksInMonth];
+
         return [
             'dayName' => $dayName,
+            'weekName' => $weekName,
             'monthName' => $monthName,
             'yearName' => $yearCycleName,
             'cyclePartName' => $cyclePartName,
