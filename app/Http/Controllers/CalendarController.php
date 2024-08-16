@@ -12,7 +12,7 @@ class CalendarController extends Controller
         $gregorianDate = Carbon::now();
         $tokiPonaDate = $this->getTokiPonaDate($gregorianDate);
 
-        return view('calendar', compact('gregorianDate', 'tokiPonaDate'));
+        return view('index', compact('gregorianDate', 'tokiPonaDate'));
     }
 
     private function getTokiPonaDate(Carbon $date)
