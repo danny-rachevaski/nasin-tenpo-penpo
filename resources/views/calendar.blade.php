@@ -4,62 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>What Toki Pona Date is Today?</title>
     <style>
-        /* Custom styles */
-        .date-container {
-            background-color: #3B71CA; /* Light grey background color */
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px; /* Center the div horizontally */
-            border-style: solid;
-            border-color: #ffd105;
-            border-width: 20px;
-        }
-
-        .date-container-2 {
-            background-color: #3B71CA; /* Light grey background color */
-            padding: 0px;
-            border-radius: 8px;
-            margin: 20px; /* Center the div horizontally */
-        }
-
-        .container {
-            margin-top: 50px; /* Optional: Adds some space from the top */
+        body, html {
+            height: 100%;
+            margin: 0;
         }
     </style>
 </head>
 <body class="bg-primary">
-    <div class="container text-center">
-            <div class="col-sm-12 date-container-2">
-                <h2 class="text-center">tenpo ni li tenpo seme?</h2>
-                <h4 class="text-center">What Toki Pona Date is Today?</h4>
-                <br>
-                <br>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-md-12 date-container">
-                    <h2 class=" ">Toki Pona Calendar</h2>
-                    <h3 class=" ">{{ $tokiPonaDate['dayName'] }} {{ $tokiPonaDate['weekName'] }} <br>
-                        {{ $tokiPonaDate['monthName'] }} <br>
-                        {{ $tokiPonaDate['yearName'] }} {{ $tokiPonaDate['cyclePartName'] }}</h3>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-12 date-container-2">
-                    <h2 class=" ">Gregorian Calendar</h2>
-                    <h3 class=" ">{{ $gregorianDate->toFormattedDateString() }}</h3>
-                </div>
-            </div>
-
+    <div class="d-flex justify-content-center align-items-center flex-column h-100">
+        <div class="text-center mb-4">
+            <h2 class="text-warning">tenpo ni li tenpo seme?</h2>
+            <h4 class="text-warning">What Toki Pona Date is Today?</h4>
+        </div>
+        <div class="text-center mb-4">
+            <h2 class="text-warning">nasin tenpo penpo</h2>
+            <h3 class="text-warning">Toki Pona Calendar</h3>
+            <h4 class="text-warning">{{ $tokiPonaDate['dayName'] }} {{ $tokiPonaDate['weekName'] }} <br>
+                {{ $tokiPonaDate['monthName'] }} <br>
+                {{ $tokiPonaDate['yearName'] }} {{ $tokiPonaDate['cyclePartName'] }}</h4>
+        </div>
+        <div class="text-center mb-4">
+            <h2 class="text-warning">nasin tenpo Kekoli</h2>
+            <h3 class="text-warning">Gregorian Calendar</h3>
+            <h4 class="text-warning">{{ $gregorianDate->format('d F Y') }}</h4>
+        </div>
+        <div class="text-center mb-4">
+            <h6 class="text-warning">This site is a prototype, and it is still in construction :></h6>
+        </div>
     </div>
+
 </body>
 </html>
